@@ -1,0 +1,30 @@
+{
+  "version": 1.0,
+  "strict": {
+    "text-font-family": "OpenSans_400Regular",
+    "text-bold-font-family": "OpenSans_700Bold",
+    "text-semi-bold-font-family": "OpenSans_600SemiBold"
+  },
+  "components": {
+    "Button": {
+      "meta": {},
+      "appearances": {
+        "variantGroups": {
+          "status": {
+            "primary": {
+
+              "state": {
+                "disabled": {
+                  "borderColor": "color-primary-disabled-border",
+                  "backgroundColor": "color-primary-disabled",
+                  "textColor": "text-disabled-color",
+                  "iconTintColor": "text-disabled-color"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
