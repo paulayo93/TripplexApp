@@ -9,7 +9,7 @@ import {
   Content,
   Button,
 } from './../../components';
-import { ms, vs, s } from 'react-native-size-matters';
+import { ms, vs, s, mvs } from 'react-native-size-matters';
 
 const NameCard = ({ title, iconName, style, titleStyle, onPress }) => {
   return (
@@ -65,6 +65,7 @@ const DetailCard = ({ title, iconName, style, titleStyle, onPress, type }) => {
                 flexDirection: 'row',
                 justifyContent: 'space-between',
                 alignItems: 'center',
+                paddingBottom: mvs(14),
               }}>
               <Text lineHeight="line17" fontSize="size10">
                 Bill Type
@@ -159,7 +160,7 @@ const DetailCard = ({ title, iconName, style, titleStyle, onPress, type }) => {
             </View>
           </>
         ) : (
-          <View>
+          <View style={{ paddingBottom: mvs(14) }}> 
             <Text fontSize="size10">Payment account</Text>
             <Icon
               style={{
@@ -250,10 +251,11 @@ const styles = StyleSheet.create({
     // marginHorizontal: ms(16),
     flexDirection: 'row',
     alignItems: 'center',
-    borderRadius: ms(10),
+    borderRadius: s(10),
     backgroundColor: '#FFFFFF',
     paddingHorizontal: s(10),
-    paddingVertical: ms(19),
+    paddingTop: ms(19),
+
     justifyContent: 'space-between',
     borderWidth: ms(1),
     borderColor: '#E2E8F0',
