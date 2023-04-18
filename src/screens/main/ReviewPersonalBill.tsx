@@ -217,7 +217,7 @@ const ReviewPersonalBill = ({ navigation }) => {
           }}>
           <Button
             text="Create Bill"
-            onPress={() => navigation.navigate('Bill')}
+            onPress={() => navigation.navigate('SingleBillDetails')}
           />
         </View>
       </Content>
@@ -227,7 +227,7 @@ const ReviewPersonalBill = ({ navigation }) => {
 
 const styles = StyleSheet.create({
   billContainer: {
-    marginHorizontal: ms(16),
+    marginHorizontal: ms(4),
     flexDirection: 'row',
     alignItems: 'center',
     borderRadius: ms(10),
@@ -244,7 +244,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: ms(15),
     marginTop: ms(24),
     paddingVertical: vs(30),
-    marginHorizontal: ms(20),
+    marginHorizontal: ms(4),
   },
   detailCard: {
     // marginHorizontal: ms(16),

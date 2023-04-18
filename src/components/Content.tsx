@@ -20,6 +20,7 @@ const Content: React.FC<ContentProps> = ({
   return (
     <KeyboardAwareScrollView
       {...props}
+      bounces={true}
       style={[
         padder && { paddingHorizontal: 32 },
         { backgroundColor: theme[`background-basic-color-${level}`] },

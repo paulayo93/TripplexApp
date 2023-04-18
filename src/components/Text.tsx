@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet } from 'react-native';
 import { Text as RNText } from '@ui-kitten/components';
-import { scale, ms } from 'react-native-size-matters';
+import { s, ms } from 'react-native-size-matters';
 
 export default Text = React.memo(props => {
   const {
@@ -12,6 +12,7 @@ export default Text = React.memo(props => {
     color,
     fontWeight = 'normal',
     centered = false,
+    fontFamily,
     style,
     ...rest
   } = props;

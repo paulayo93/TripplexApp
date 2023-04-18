@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
 export const Icons = {
   leftArrow: require('./leftArrow.png'),
   bell: require('./bell.png'),
@@ -17,4 +18,12 @@ export const Icons = {
   personal: require('./personal.png'),
   addcircle: require('./add_circled.png'),
   nobill: require('./nobill.png'),
+  ikejaelectric: require('./ikejaelectric.png'),
+  leftarrowwhite: require('./leftarrowwhite.png'),
 };
+
+export { default as HomeIcon } from './HomeIcon';
+export { default as WalletIcon } from './WalletIcon';
+export { default as ProfileIcon } from './ProfileIcon';
+export { default as InsightIcon } from './InsightIcon';
+export { default as BillIcon } from './BillIcon';

@@ -53,6 +53,8 @@ const AssetIconsPack: IconPack<ImageProps | SvgProps> = {
     addcircle: createIcon(Icons.addcircle),
     input: createIcon(Icons.input),
     nobill: createIcon(Icons.nobill),
+    ikejaelectric: createIcon(Icons.ikejaelectric),
+    leftarrowwhite: createIcon(Icons.leftarrowwhite),
   },
 };
 export default AssetIconsPack;

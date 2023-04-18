@@ -20,3 +20,9 @@ The app uses expo framework
   - `
     npm start
   `
+
+# Technologies Used
+- React Native
+- TypeScript
+- Redux Toolkit
+- Expo Framework

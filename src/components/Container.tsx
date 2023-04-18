@@ -20,6 +20,8 @@ const Container: React.FC<ContainerProps> = ({
   const insets = useSafeAreaInsets();
   const theme = useTheme();
 
+  console.log(insets.right + 16);
+
   return (
     <Layout
       {...props}

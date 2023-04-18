@@ -24,6 +24,7 @@ const TopNavigationComponent = memo(
     containerStyle,
     textProps,
     pressBack,
+    iconName
   }: TopNavigationProps_) => {
     const theme = useTheme();
     const { goBack } = useNavigation();
@@ -47,8 +48,11 @@ const TopNavigationComponent = memo(
           {!hideBack && (
             <TouchableOpacity onPress={() => goBack()}>
               <Icon
-                style={{ height: scale(13.75), width: scale(16.58) }}
-                name="leftArrow"
+                style={{
+                  height: scale(13.75),
+                  width: scale(16.58),
+                }}
+                name={iconName || "leftArrow"}
                 pack="assets"
               />
             </TouchableOpacity>
