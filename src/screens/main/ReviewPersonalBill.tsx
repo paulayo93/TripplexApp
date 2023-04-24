@@ -1,7 +1,13 @@
 import React from 'react';
 import { View, StyleSheet } from 'react-native';
-import { Icon, useTheme } from '@ui-kitten/components';
-import { useNavigation } from '@react-navigation/native';
+import {
+  Icon,
+  useTheme,
+  Modal,
+  Card,
+  useStyleSheet,
+  StyleService,
+} from '@ui-kitten/components';
 import {
   Container,
   TopNavigationComponent,
@@ -12,6 +18,8 @@ import {
 import { ms, vs, s, mvs } from 'react-native-size-matters';
 
 const NameCard = ({ title, iconName, style, titleStyle, onPress }) => {
+  const styles = useStyleSheet(themedStyles);
+
   return (
     <View style={[{ ...styles.billContainer }, style]}>
       <View style={{ flexDirection: 'row', alignItems: 'center' }}>
@@ -35,6 +43,8 @@ const NameCard = ({ title, iconName, style, titleStyle, onPress }) => {
 };
 
 const DetailCard = ({ title, iconName, style, titleStyle, onPress, type }) => {
+  const styles = useStyleSheet(themedStyles);
+
   return (
     <View style={[{ ...styles.detailCard }, style]}>
       <View style={{}}>
@@ -55,6 +65,7 @@ const DetailCard = ({ title, iconName, style, titleStyle, onPress, type }) => {
                     marginTop: ms(6, -3),
                   }}
                   fontSize="size16"
+                  fontWeight="semiBold"
                   lineHeight="line17">
                   N60,000.00
                 </Text>
@@ -160,7 +171,7 @@ const DetailCard = ({ title, iconName, style, titleStyle, onPress, type }) => {
             </View>
           </>
         ) : (
-          <View style={{ paddingBottom: mvs(14) }}> 
+          <View style={{ paddingBottom: mvs(14) }}>
             <Text fontSize="size10">Payment account</Text>
             <Icon
               style={{
@@ -180,6 +191,9 @@ const DetailCard = ({ title, iconName, style, titleStyle, onPress, type }) => {
 };
 const ReviewPersonalBill = ({ navigation }) => {
   const theme = useTheme();
+  const [visible, setVisible] = React.useState(false);
+  const styles = useStyleSheet(themedStyles);
+
   return (
     <Container backgroundColor="#f5f5f5" padded={true}>
       <Content>
@@ -218,15 +232,109 @@ const ReviewPersonalBill = ({ navigation }) => {
           }}>
           <Button
             text="Create Bill"
-            onPress={() => navigation.navigate('SingleBillDetails')}
+            textProps={{
+              lineHeight: 'line22',
+              fontSize: 'size16',
+              fontWeight: 'semiBold',
+            }}
+            // onPress={() => navigation.navigate('SingleBillDetails')}
+            onPress={() => setVisible(true)}
           />
         </View>
       </Content>
+
+      <Modal backdropStyle={styles.backdrop} visible={visible}>
+        <Card
+          onPress={() => null}
+          appearance="filled"
+          style={{
+            borderRadius: 12,
+            width: ms(343),
+            height: mvs(366),
+            paddingHorizontal: s(16),
+            paddingVertical: mvs(20),
+          }}>
+          <View
+            style={{
+              flexDirection: 'row',
+              justifyContent: 'space-between',
+              // paddingTop: mvs(20),
+              alignItems: 'flex-start',
+              marginBottom: s(16),
+            }}>
+            <Icon
+              style={{ width: ms(48, 0.8), height: mvs(48, 0.8) }}
+              pack="assets"
+              name="greencheck"
+            />
+            <Icon
+              style={{ width: ms(48, 0.8), height: mvs(48, 0, 8) }}
+              pack="assets"
+              name="buttonclosex"
+            />
+          </View>
+
+          <Text
+            fontWeight="openSansBold"
+            fontSize="size17"
+            lineHeight="line30"
+            color="#101828"
+            textBreakStrategy="balanced"
+            lineBreakStrategyIOS="push-out"
+            style={{ marginBottom: s(8) }}>
+            You have successfully created your bill
+          </Text>
+
+          <Text
+            style={{ width: s(190) }}
+            color="#475467"
+            fontWeight="interNormal"
+            lineHeight="line20">
+            Your bills and expenses will never be caught unpaid.
+          </Text>
+
+          <View style={styles.modalMiniCard}>
+            <View style={[styles.modalMiniCardContent]}>
+              <Text
+                lineHeight="line19"
+                fontWeight="openSansBold"
+                fontSize="size14"
+                color="#0F172A">
+                Rent
+              </Text>
+              <Text lineHeight="line19" fontSize="size14" color="#0F172A">
+                N60,000.00
+              </Text>
+            </View>
+            <View style={[styles.modalMiniCardContent, { marginTop: vs(4) }]}>
+              <Text fontSize="size14" lineHeight="line19" color="#94A3B8">
+                Yearly
+              </Text>
+              <Text fontSize="size14" lineHeight="line19" color="#94A3B8">
+                20.02.2023
+              </Text>
+            </View>
+          </View>
+
+          <Button
+            textProps={{
+              color: 'red',
+              lineHeight: 'line20',
+              fontWeight: 'semiBold',
+            }}
+            text="Done"
+            onPress={() => {
+              setVisible(false);
+              navigation.navigate('Bill');
+            }}
+          />
+        </Card>
+      </Modal>
     </Container>
   );
 };
 
-const styles = StyleSheet.create({
+const themedStyles = StyleService.create({
   billContainer: {
     marginHorizontal: ms(4),
     flexDirection: 'row',
@@ -266,6 +374,23 @@ const styles = StyleSheet.create({
     paddingBottom: ms(22, 0.1),
     width: '100%',
     marginBottom: ms(22),
+  },
+  backdrop: {
+    backgroundColor: 'color-primary-100',
+    opacity: 0.83333,
+  },
+  modalMiniCard: {
+    marginTop: mvs(24),
+    borderRadius: s(10),
+    borderWidth: 1,
+    borderColor: '#CBD5E1',
+    paddingVertical: mvs(13),
+    paddingHorizontal: ms(13),
+    marginBottom: mvs(24),
+  },
+  modalMiniCardContent: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
   },
 });
 

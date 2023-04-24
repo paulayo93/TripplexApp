@@ -2,6 +2,7 @@ import React from 'react';
 import { Layout, LayoutProps } from '@ui-kitten/components';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useTheme } from '@react-navigation/native';
+import { StatusBar } from 'expo-status-bar';
 
 interface ContainerProps extends LayoutProps {
   useSafeArea?: boolean;
@@ -15,6 +16,8 @@ const Container: React.FC<ContainerProps> = ({
   backgroundColor,
   padded = true,
   scroll = true,
+  light,
+  statusBarBgColor,
   ...props
 }) => {
   const insets = useSafeAreaInsets();
@@ -31,6 +34,13 @@ const Container: React.FC<ContainerProps> = ({
         paddingBottom: padded ? insets.bottom + 6 : 0,
         backgroundColor: backgroundColor || '#FFFFFF',
       }}>
+      <StatusBar
+        hidden={false}
+        style={light ? 'light' : 'dark'}
+        // translucent={true}
+        // barStyle={'light-content'}
+        backgroundColor={statusBarBgColor || '#FFFFFF'}
+      />
       {children}
     </Layout>
   );

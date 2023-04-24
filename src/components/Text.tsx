@@ -23,9 +23,10 @@ export default Text = React.memo(props => {
         {
           color: color || '#111317',
           textAlign: centered ? 'center' : 'left',
-          ...textStyles[fontWeight],
+
           ...textStyles[fontSize],
           ...textStyles[lineHeight],
+          ...textStyles[fontWeight],
           ...style,
         },
       ]}
@@ -44,6 +45,10 @@ const textStyles = StyleSheet.create({
     fontWeight: '700',
     fontFamily: 'Merriweather_700Bold',
   },
+  openSansBold: {
+    fontWeight: '700',
+    fontFamily: 'OpenSans_700Bold',
+  },
   semiBold: {
     fontWeight: '600',
     fontFamily: 'OpenSans_600SemiBold',
@@ -56,9 +61,13 @@ const textStyles = StyleSheet.create({
     fontWeight: 'normal',
     fontFamily: 'OpenSans_400Regular',
   },
+  interNormal: {
+    fontWeight: 'normal',
+    fontFamily: 'Inter_400Regular',
+  },
   light: {
-    fontWeight: '400',
-    fontFamily: 'OpenSans_400Regular',
+    fontWeight: '300',
+    fontFamily: 'OpenSans_300Light',
   },
   size8: {
     fontSize: ms(8),

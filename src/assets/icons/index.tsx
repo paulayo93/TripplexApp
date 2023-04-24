@@ -20,6 +20,9 @@ export const Icons = {
   nobill: require('./nobill.png'),
   ikejaelectric: require('./ikejaelectric.png'),
   leftarrowwhite: require('./leftarrowwhite.png'),
+  greencheck: require('./greencheck.png'),
+  buttonclosex: require('./buttonclosex.png'),
+  speed: require('./speed.png'),
 };
 
 export { default as HomeIcon } from './HomeIcon';

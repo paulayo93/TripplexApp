@@ -1,28 +1,11 @@
 import React from 'react';
 import { View, StyleSheet, TouchableOpacity } from 'react-native';
 import { Layout, Icon, useTheme, Input } from '@ui-kitten/components';
-import { Text, Container, Button } from './../../components';
+import { Text, Container, Button, Label } from './../../components';
 import { scale, ms, vs, ScaledSheet } from 'react-native-size-matters';
 import { useDispatch, useSelector } from 'react-redux';
 import { login } from '../../store/tripplex.reducer';
 
-const Label = ({
-  text,
-  theme,
-}: {
-  text: string;
-  theme: Record<string, string>;
-}) => {
-  return (
-    <Text
-      // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-      color={theme['text-label-color']}
-      lineHeight="line17"
-      fontWeight="semiBold">
-      {text}
-    </Text>
-  );
-};
 const TitleComponent = ({ title, subTitle }) => {
   return (
     <View style={styles.container}>

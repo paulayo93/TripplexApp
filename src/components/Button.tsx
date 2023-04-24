@@ -11,6 +11,7 @@ const ButtonComponent = props => {
       {...buttonProps}
       size="large"
       style={{ borderRadius: ms(8) }}>
+      {/* {props.children} */}
       <Text {...textProps}>{text}</Text>
     </Button>
   );

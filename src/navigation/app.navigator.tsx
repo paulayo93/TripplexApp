@@ -139,7 +139,7 @@ const screenOptions = {
 
 export const AllTabs = () => {
   return (
-    <Tab.Navigator initialRouteName="Bill" screenOptions={screenOptions}>
+    <Tab.Navigator initialRouteName="Home" screenOptions={screenOptions}>
       <Tab.Screen
         name="Home"
         component={Home}

@@ -3,8 +3,7 @@ import React, { useState, useMemo, useCallback, useEffect } from 'react';
 import * as SplashScreen from 'expo-splash-screen';
 import { StatusBar } from 'expo-status-bar';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
-import { SwitchNavigator } from './app.navigator';
-import { NavigationContainer, LightTheme } from '@react-navigation/native';
+import { NavigationContainer } from '@react-navigation/native';
 import * as eva from '@eva-design/eva';
 import { EvaIconsPack } from '@ui-kitten/eva-icons';
 import AssetIconsPack from './../assets/AssetIconsPack';
@@ -24,6 +23,7 @@ import {
   Text,
 } from '@ui-kitten/components';
 import * as Font from 'expo-font';
+import { Inter_400Regular } from '@expo-google-fonts/inter';
 
 import {
   Merriweather_400Regular,
@@ -35,6 +35,7 @@ import {
   OpenSans_500Medium,
   OpenSans_600SemiBold,
   OpenSans_700Bold,
+  OpenSans_300Light,
 } from '@expo-google-fonts/open-sans';
 
 let persistor = persistStore(store);
@@ -52,6 +53,8 @@ const Base = () => {
     OpenSans_500Medium,
     OpenSans_600SemiBold,
     OpenSans_700Bold,
+    OpenSans_300Light,
+    Inter_400Regular,
   };
 
   const customFonts = useMemo(() => fonts, []);
@@ -96,7 +99,7 @@ const Base = () => {
             <StatusBar
               style={'light'}
               translucent={true}
-              backgroundColor={'#00000000'}
+              backgroundColor={'#000'}
             />
 
             <NavigationContainer>

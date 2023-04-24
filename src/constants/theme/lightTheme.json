@@ -1,5 +1,4 @@
 {
-    "text-label-color": "$color-gray-900",
-    "text-disabled-color": "$color-basic-1100"
-
+  "text-label-color": "$color-gray-900",
+  "text-disabled-color": "$color-basic-1100"
 }

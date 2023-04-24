@@ -12,7 +12,6 @@
         "variantGroups": {
           "status": {
             "primary": {
-
               "state": {
                 "disabled": {
                   "borderColor": "color-primary-disabled-border",
@@ -22,6 +21,31 @@
                 }
               }
             }
+          }
+        }
+      }
+    },
+    "Select": {
+      "meta": {},
+      "appearances": {
+        "default": {
+          "variantGroups": {
+            "status": {
+              "basic": {
+                "backgroundColor": "background-basic-color-1"
+              }
+            }
+          }
+        }
+      }
+    },
+    "Card": {
+      "meta": {},
+      "appearances": {
+        "outline": {
+          "mapping": {
+            "bodyPaddingHorizontal": 0,
+            "bodyPaddingVertical": 0
           }
         }
       }

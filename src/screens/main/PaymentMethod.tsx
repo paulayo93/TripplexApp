@@ -59,10 +59,8 @@ const BillCard = ({
   );
 };
 
-const PaymentMethod = () => {
-  const { navigate } = useNavigation();
-
-  const AddBankDetails = () => navigate('ReviewPersonalBill');
+const PaymentMethod = ({ navigation }) => {
+  const AddBankDetails = () => navigation.navigate('AddBankDetails');
   return (
     <Container padded={false} scroll>
       <StatusBar style="dark" />
@@ -86,6 +84,7 @@ const PaymentMethod = () => {
       <BillCard
         title="Bank account"
         subTitle="Withdraw funds directly to your bank"
+        onPress={() => navigation.navigate('AddBankDetails')}
       />
       <View style={{ marginTop: s(16) }} />
       <BillCard

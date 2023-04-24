@@ -55,6 +55,9 @@ const AssetIconsPack: IconPack<ImageProps | SvgProps> = {
     nobill: createIcon(Icons.nobill),
     ikejaelectric: createIcon(Icons.ikejaelectric),
     leftarrowwhite: createIcon(Icons.leftarrowwhite),
+    greencheck: createIcon(Icons.greencheck),
+    buttonclosex: createIcon(Icons.buttonclosex),
+    speed: createIcon(Icons.speed),
   },
 };
 export default AssetIconsPack;

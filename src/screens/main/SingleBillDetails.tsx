@@ -9,6 +9,7 @@ import {
   Content,
   Button,
 } from './../../components';
+import { StatusBar } from 'expo-status-bar';
 import { ms, vs, s, mvs } from 'react-native-size-matters';
 
 const NameCard = ({ title, iconName, style, titleStyle, onPress }) => {
@@ -182,7 +183,11 @@ const DetailCard = ({ title, iconName, style, titleStyle, onPress, type }) => {
 const SingleBillDetails = ({ navigation }) => {
   const theme = useTheme();
   return (
-    <Container backgroundColor="#0F172A" padded={true}>
+    <Container
+      backgroundColor="#0F172A"
+      padded={true}
+      statusBarBgColor="#0F172A"
+      light={true}>
       <Content>
         <TopNavigationComponent
           title="Eletrical Bill"

@@ -48,7 +48,7 @@ const BillCard = ({
 const CreateBill = () => {
   const { navigate } = useNavigation();
 
-  const EnterBillDetail = () => navigate('PaymentMethod');
+  const EnterBillDetail = () => navigate('EnterBillDetail');
   return (
     <Container backgroundColor="#f5f5f5" padded={false} scroll>
       <StatusBar style="dark" />
