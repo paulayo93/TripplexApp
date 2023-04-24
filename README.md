@@ -12,7 +12,7 @@ The app uses expo framework
     cd TripplexApp
   `
 - Install application dependencies with this command
-  - `bash
+  - `
     npm install
   `
 
