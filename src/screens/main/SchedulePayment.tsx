@@ -18,12 +18,16 @@ import {
   Label,
 } from './../../components';
 import { ms, vs, s, mvs } from 'react-native-size-matters';
+import { StatusBar } from 'expo-status-bar';
+
 
 const SchedulePayment = ({ navigation }) => {
   const [selectedIndex, setSelectedIndex] = React.useState(0);
   const theme = useTheme();
   return (
     <Container padded={false} scroll>
+      <StatusBar style="dark" />
+
       <TopNavigationComponent
         title="Schedule Payment"
         textProps={{

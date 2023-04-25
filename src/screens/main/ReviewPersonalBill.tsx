@@ -350,10 +350,11 @@ const themedStyles = StyleService.create({
     minHeight: 528,
     borderRadius: ms(20),
     borderWidth: 0,
-    paddingHorizontal: ms(15),
+    paddingLeft: ms(10),
+    paddingRight: s(20),
     marginTop: ms(24),
     paddingVertical: vs(30),
-    marginHorizontal: ms(4),
+    marginHorizontal: ms(4, 0.8),
   },
   detailCard: {
     // marginHorizontal: ms(16),

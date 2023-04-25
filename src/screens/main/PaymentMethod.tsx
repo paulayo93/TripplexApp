@@ -95,10 +95,12 @@ const PaymentMethod = ({ navigation }) => {
 
       <View
         style={{
-          marginTop: Platform.OS === 'android' ? s(150) : s(180),
+          marginBottom: Platform.OS === 'android' ? s(48) : s(48),
           paddingHorizontal: ms(20),
+          flex: 1,
+          justifyContent: 'flex-end'
         }}>
-        <Button text="Continue" onPress={() => AddBankDetails()} />
+        <Button textProps={{lineHeight: 'line20'}} text="Continue" onPress={() => AddBankDetails()} />
       </View>
     </Container>
   );

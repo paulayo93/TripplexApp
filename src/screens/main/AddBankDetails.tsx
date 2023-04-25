@@ -16,6 +16,8 @@ import {
   Label,
 } from './../../components';
 import { ms, vs, s, mvs } from 'react-native-size-matters';
+import { StatusBar } from 'expo-status-bar';
+
 
 const AddBankDetails = ({ navigation }) => {
   const theme = useTheme();
@@ -23,6 +25,8 @@ const AddBankDetails = ({ navigation }) => {
   const ReviewPersonalBill = () => navigation.navigate('ReviewPersonalBill');
   return (
     <Container padded={false} scroll>
+      <StatusBar style="dark" />
+
       <TopNavigationComponent
         title="Bank details"
         textProps={{

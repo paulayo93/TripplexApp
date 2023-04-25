@@ -1,7 +1,7 @@
 import React, { memo } from 'react';
 import { Icon, useTheme, TopNavigationProps } from '@ui-kitten/components';
 import { useNavigation } from '@react-navigation/native';
-import { scale, ms, vs } from 'react-native-size-matters';
+import { scale, ms, vs, s } from 'react-native-size-matters';
 import { View, StyleSheet, TouchableOpacity } from 'react-native';
 import Text from './Text';
 interface TopNavigationProps_ extends TopNavigationProps {
@@ -24,7 +24,7 @@ const TopNavigationComponent = memo(
     containerStyle,
     textProps,
     pressBack,
-    iconName
+    iconName,
   }: TopNavigationProps_) => {
     const theme = useTheme();
     const { goBack } = useNavigation();
@@ -43,16 +43,16 @@ const TopNavigationComponent = memo(
             flexDirection: hideBack ? 'row-reverse' : 'row',
             alignItems: 'center',
             justifyContent: 'space-between',
-            paddingHorizontal: 20,
+            paddingHorizontal: s(20),
           }}>
           {!hideBack && (
             <TouchableOpacity onPress={() => goBack()}>
               <Icon
                 style={{
-                  height: scale(13.75),
-                  width: scale(16.58),
+                  height: s(13.75),
+                  width: s(16.58),
                 }}
-                name={iconName || "leftArrow"}
+                name={iconName || 'leftArrow'}
                 pack="assets"
               />
             </TouchableOpacity>
@@ -62,8 +62,8 @@ const TopNavigationComponent = memo(
             <TouchableOpacity onPress={() => null}>
               <Icon
                 style={{
-                  height: scale(16.5),
-                  width: scale(18.33),
+                  height: vs(16.5),
+                  width: vs(18.33),
                 }}
                 name="bell"
                 pack="assets"

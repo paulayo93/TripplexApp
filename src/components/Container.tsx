@@ -9,6 +9,7 @@ interface ContainerProps extends LayoutProps {
   backgroundColor?: string;
   padded: boolean;
   scroll: boolean;
+  light: boolean;
 }
 
 const Container: React.FC<ContainerProps> = ({
