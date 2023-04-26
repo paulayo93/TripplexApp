@@ -1,8 +1,8 @@
 import React, { memo } from 'react';
 import { Icon, useTheme, TopNavigationProps } from '@ui-kitten/components';
 import { useNavigation } from '@react-navigation/native';
-import { scale, ms, vs, s } from 'react-native-size-matters';
-import { View, StyleSheet, TouchableOpacity } from 'react-native';
+import { ms, vs, s } from 'react-native-size-matters';
+import { View, StyleSheet, Pressable } from 'react-native';
 import Text from './Text';
 interface TopNavigationProps_ extends TopNavigationProps {
   hideBack?: boolean | undefined;
@@ -46,20 +46,20 @@ const TopNavigationComponent = memo(
             paddingHorizontal: s(20),
           }}>
           {!hideBack && (
-            <TouchableOpacity onPress={() => goBack()}>
+            <Pressable onPress={() => goBack()}>
               <Icon
                 style={{
-                  height: s(13.75),
-                  width: s(16.58),
+                  height: vs(13.75),
+                  width: ms(16.58),
                 }}
                 name={iconName || 'leftArrow'}
                 pack="assets"
               />
-            </TouchableOpacity>
+            </Pressable>
           )}
 
           {showNotification && (
-            <TouchableOpacity onPress={() => null}>
+            <Pressable onPress={() => null}>
               <Icon
                 style={{
                   height: vs(16.5),
@@ -68,7 +68,7 @@ const TopNavigationComponent = memo(
                 name="bell"
                 pack="assets"
               />
-            </TouchableOpacity>
+            </Pressable>
           )}
         </View>
         <View
@@ -86,9 +86,9 @@ const TopNavigationComponent = memo(
 
 const styles = StyleSheet.create({
   container: {
-    paddingHorizontal: 8,
-    paddingTop: 50,
-    minHeight: 56,
+    paddingHorizontal: ms(8),
+    paddingTop: vs(50),
+    minHeight: vs(56),
   },
 });
 
