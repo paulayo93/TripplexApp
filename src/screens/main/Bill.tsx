@@ -13,7 +13,7 @@ const Bill = () => {
   const theme = useTheme();
   return (
     <Container padded={false} scroll>
-      <StatusBar />
+      <StatusBar style="dark" />
       <TopNavigationComponent
         backgroundColor="#C8F2FE"
         title="Your Bill"
